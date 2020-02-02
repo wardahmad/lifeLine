@@ -10,6 +10,8 @@ import How from './How';
 import Hospital from './Hospital';
 import About from './About';
 import Contact from './Contact';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 
 class Menu extends React.Component {
   render() {
@@ -24,22 +26,25 @@ class Menu extends React.Component {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="nav mr-auto">
-              <Nav.Link><Link to='/Home'>Home</Link></Nav.Link>
-              <Nav.Link><Link to='/How'>How to donate?</Link></Nav.Link>
+              <Nav.Link><Link exact to='/'>Home</Link></Nav.Link>
+              <Nav.Link><Link exact to='/How'>How to donate?</Link></Nav.Link>
               <Nav.Link><Link to='/Hospital'>Our Partners</Link></Nav.Link>
               <Nav.Link><Link to='/About'>About us</Link></Nav.Link>
               <Nav.Link><Link to='/Contact'>Contact us</Link></Nav.Link>
 
-              <Route path="./components/Home" component={Home} />
-              <Route path="./components/How" component={How} />
-              <Route path="./components/Hospital" component={Hospital} />
-              <Route path="./components/About" component={About} />
-              <Route path="./components/Contact" component={Contact} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/How" component={How} />
+              <Route path="/Hospital" component={Hospital} />
+              <Route path="/About" component={About} />
+              <Route path="/Contact" component={Contact} />
 
             </Nav>
             <Nav pullRight inline>
-              <Nav.Link href="#">Sign In</Nav.Link>
-              <Nav.Link href="#"> Sign Up</Nav.Link>
+              <Nav.Link><Link to='/SignIn'>Sign In</Link></Nav.Link>
+              <Nav.Link><Link to='/SignUp'> Sign Up</Link></Nav.Link>
+
+              <Route path="/SignIn" component={SignIn} />
+              <Route path="/SignUp" component={SignUp} />
 
             </Nav>
           </Navbar.Collapse>
