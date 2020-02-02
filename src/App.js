@@ -6,16 +6,18 @@ import Footer from './components/Footer';
 import ControlledCarousel from './components/Home';
 import Info from './components/Info';
 import Hospital from './components/Hospital';
-import SignUp from './components/SignUp';
+//import SignIn from './components/SignIn';
+//import SignUp from './components/SignUp';
+
 
 
 function App() {
   return (
     <div>
     < Menu />
-    < ControlledCarousel />
-    < Info />
-    < Hospital />
+    {/* < ControlledCarousel /> */}
+    {/* < Info />
+    < Hospital /> */}
     < Footer />
     </div>
   );
