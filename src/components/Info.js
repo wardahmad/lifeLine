@@ -1,6 +1,8 @@
-"use strict"
+//"use strict"
 import React from 'react';
-import { Card, Button, Container, Image } from 'react-bootstrap';
+//import { Card, Button, Container, Image } from 'react-bootstrap';
+import { Card, Button} from 'react-bootstrap';
+
 import img4 from './img/img4.jpg';
 
 class Info extends React.Component {
