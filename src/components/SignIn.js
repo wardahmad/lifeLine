@@ -2,9 +2,10 @@ import React from 'react';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
-
+import jwt_decode from 'jwt-decode'
 
 class SignIn extends React.Component {
+
     state = {}
 
     onChangeHandler = (e) => {
@@ -15,15 +16,23 @@ class SignIn extends React.Component {
 
     onSubmetHandler = () => {
         axios.post("http://localhost:7000/login", this.state)
-        .then(res => 
-
+        .then(res =>   {
             
-            console.log(res))
+            console.log(res.data.login)
+        if (res.data.login){
+            console.log(res.data.token)
+            var pynode = jwt_decode(res.data.token)
+            console.log(pynode)
+            localStorage.setItem('token', res.data.token)
+            this.props.history.push('/hospital')
+            //localStorage.hospital
+        }
+        })
         .catch(err => console.log(err))
     }
 
     render() {
-        console.log(this.state)
+        //console.log(this.state)
         return (
 
             <Form onSubmit={this}>
@@ -38,7 +47,7 @@ class SignIn extends React.Component {
                 {/* <Button variant="primary" type="submit">
                     
                   </Button> */}
-                  <Button onClick={this.onSubmetHandler}>Sign In</Button>
+                  <Button onClick={this.onSubmetHandler} >Sign In</Button>
             </Form>
 
         );

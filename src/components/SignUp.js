@@ -18,11 +18,12 @@ export class SignUp extends React.Component {
 
     onSubmetHandler = () => {
         axios.post("http://localhost:7000/hospital", this.state)
-            .then(res => { console.log(res) })
+            .then(res => { console.log(res)})
+            
             .catch(err => { console.log(err) })
     }
     render() {
-        console.log(this.state)
+        //console.log(this.state)
         return (
             <Form onSubmit={this.onSubmetHandler}>
                 <Form.Group controlId="formGroupUsername">

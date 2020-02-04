@@ -1,57 +1,71 @@
 import React from 'react';
-//import { Card, CardGroup, Button, Container, Image } from 'react-bootstrap';
-//import { Card, CardGroup, Button} from 'react-bootstrap';
-//import hospital1 from './img/hospital1.jpg';
-//import hospital2 from './img/hospital2.jpg';
-//import hospital3 from './img/hospital3.jpg';
+import Axios from 'axios';
+//import axios from 'axios';
+import jwt_decode from 'jwt-decode'
+//import EditHospital from './EditHospital'
 
 class Hospital extends React.Component {
+  state = {
+    name: "",
+    location: "",
+    email: "",
+    hospital: "",
+    id: ""
+  }
+
+  componentDidMount(){
+    var hospital =jwt_decode(localStorage.token).hospital
+    console.log(hospital)
+    Axios.get(`http://localhost:7000/hospital/${hospital._id}`)
+    .then(res => {
+      //var hospitalID = res.data.hospital;
+      //console.log(hospitalID) 
+      console.log(res.data.hospital.name)
+      this.setState({
+        name: res.data.hospital.name,
+        location: res.data.hospital.location,
+        email: res.data.hospital.email,
+        id : hospital._id
+        //hospital : jwt_decode(localStorage.token).hospital
+        })
+    })
+
+    .catch(console.log)
+  }
+
+  deleteHospital=(e)=>{
+    Axios.delete(`http://localhost:7000/hospital/${this.state.id}`) //http://localhost:7000/hospital/:id
+    .then(res => {
+      //console.log(res)
+      console.log(res)
+      //this.props.history.push('./hospital')
+    } 
+      )}
+
+  editHospital=()=>{
+    this.props.history.push(`./EditHospital/${this.state.id}`)
+  }
+
+  addMember=()=>{
+    this.props.history.push(`./AddMember/${this.state.id}`)
+  }
+
+
   render() {
     return (
       <div>
-        <h>Hospital Component</h>
-      </div>
-
-      // <CardGroup>
-      //   <Card>
-      //     <Card.Img variant="top" src={hospital1} />
-      //     <Card.Body>
-      //       <Card.Title>King Fahd General Hospital</Card.Title>
-      //       <Card.Text>
-      //         This is a wider card with supporting text below as a natural lead-in to
-      //         additional content. This content is a little bit longer.
-      //       </Card.Text>
-      //       <Button variant="primary">Read more</Button>
-      //     </Card.Body>
+        <h1>Hospital Information</h1>
+        Hospital Name: {this.state.name}<br></br>
+        location: {this.state.location}<br></br>
+        email: {this.state.email}<br></br>
+        {/* {this.state.id} */}
+        {/* {this.state.hospital} */}
         
-      //   </Card>
-      //   <Card>
-      //     <Card.Img variant="top" src={hospital2} />
-      //     <Card.Body>
-      //       <Card.Title>Erfan & Bagdo Hospital </Card.Title>
-      //       <Card.Text>
-      //         This card has supporting text below as a natural lead-in to additional
-      //   content.{' '}
-      //       </Card.Text>
-      //       <Button variant="primary">Read more</Button>
-      //     </Card.Body>
-      //   </Card>
-      //   <Card>
-      //     <Card.Img variant="top" src={hospital3} />
-      //     <Card.Body>
-      //       <Card.Title>Saudi German Hospital</Card.Title>
-      //       <Card.Text>
-      //         This is a wider card with supporting text below as a natural lead-in to
-      //         additional content. This card has even longer content than the first to
-      //         show that equal height action.
-      //       </Card.Text>
-      //       <Button variant="primary">Read more</Button>
-      //     </Card.Body>
 
-      //   </Card>
-
-      // </CardGroup>
-
+        <button onClick={(e) => this.deleteHospital(e)}>Delete Hospital</button>{' '}
+        <button onClick={(e) => this.editHospital(e)}>Edit Hospital</button>{' '}
+        <button onClick={(e) => this.addMember(e)}>Add Member</button>
+      </div>
     )
   }
 }
