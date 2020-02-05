@@ -1,6 +1,5 @@
 <img align="center" src="images/logo-aa-2.png">
 
-
 ### Project #4: MERN stack app
 # Life Line
 
@@ -57,7 +56,6 @@ two models:
 * React-bootstrap
 ​
 ### what to add next?
-​
-* Members can log in and book appointments for donation.
+​* Members can log in and book appointments for donation.
 * Use hospitals' api.
 * All hospitals can see all donors.
