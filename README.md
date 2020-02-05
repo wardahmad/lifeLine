@@ -1,9 +1,9 @@
 <img align="center" src="images/logo-aa-2.png">
+<img align="center" src="images/solidarity.png">
 
 ### Project #4: MERN stack app : Life Line
 
 ### Deployed link:
-
 
 ## :large_orange_diamond: Life Line
 ​
@@ -40,13 +40,11 @@ Two models:
 * Show all members for each hospital.
 * Contact us page.
 * About Life Line page.
-​
-​
+​​
 ### :small_orange_diamond: :bust_in_silhouette: User Story
 #### :hospital: Hospital: 
-  * User can create, edit and delete account.
-  * User can add and show members: donors and patients.
-​
+* User can create, edit and delete account.
+* User can add and show members: donors and patients.
 ​
 ### Favorite part: 
 * Collabration 
