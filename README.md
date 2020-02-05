@@ -2,16 +2,16 @@
 
 ### Project #4: MERN stack app : Life Line
 
-# Deployed link:
+### Deployed link:
 
 
-## :large_orange_diamond: :syrigne: Life Line
+## :large_orange_diamond: Life Line
 ​
 Life Line is a blood donation system that collects all hospitals and blood banks in one place.
 ​
 ​
 ### :small_orange_diamond: Technologies:
- Used:
+ #### Used:
  * MERN to create a full stack application
  * Java Script
  * React
