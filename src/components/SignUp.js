@@ -3,7 +3,6 @@ import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
 
-//import signin from './img/signin.png';
 
 export class SignUp extends React.Component {
 
@@ -26,9 +25,10 @@ export class SignUp extends React.Component {
     render() {
         //console.log(this.state)
         return (
-            <Form onSubmit={this.onSubmetHandler}>
+            <Form onSubmit={this.onSubmetHandler} className="form">
+                <h4 style={{textAlign: "center"}}>SignUp</h4><br></br>
                 <Form.Group controlId="formGroupUsername">
-                    <Form.Label>Name</Form.Label>
+                    <Form.Label>Hospital Name</Form.Label>
                     <Form.Control name="name" onChange={this.onChangeHandler} type="text" placeholder="Hospital" />
                 </Form.Group>
                 <Form.Group controlId="formGroupLocation">
@@ -43,10 +43,8 @@ export class SignUp extends React.Component {
                     <Form.Label>Password</Form.Label>
                     <Form.Control name="password" onChange={this.onChangeHandler} type="password" placeholder="Password" />
                 </Form.Group>
-                {/* <Button variant="primary" type="submit">
-                    
-                  </Button> */}
-                <Button onClick = {this.onSubmetHandler} > SignUp</Button>
+
+                <Button onClick={this.onSubmetHandler}>SignUp</Button>
             </Form>
 
 

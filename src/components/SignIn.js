@@ -33,10 +33,11 @@ class SignIn extends React.Component {
 
     render() {
         //console.log(this.state)
-        return (
-
-            <Form onSubmit={this}>
-                <Form.Group controlId="formGroupEmail">
+        return (    
+            
+            <Form onSubmit={this} className="formSignIn">
+            <h4 style={{textAlign: "center"}}>SignIn</h4><br></br>                
+                <Form.Group controlId="formGroupEmail" >
                     <Form.Label>Email address</Form.Label>
                     <Form.Control name="email" onChange={this.onChangeHandler} type="email" placeholder="Enter email" />
                 </Form.Group>
@@ -44,9 +45,7 @@ class SignIn extends React.Component {
                     <Form.Label>Password</Form.Label>
                     <Form.Control name="password" onChange={this.onChangeHandler} type="password" placeholder="Password" />
                 </Form.Group>
-                {/* <Button variant="primary" type="submit">
-                    
-                  </Button> */}
+
                   <Button onClick={this.onSubmetHandler} >Sign In</Button>
             </Form>
 

@@ -12,6 +12,33 @@ code {
     monospace;
 }
 
-/* .hospitalContainar{
-  align-content: center;
-} */
+.formSignIn{
+width: 23rem;
+text-align: center;
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top:150px;
+}
+
+.form{
+  width: 25rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:50px;
+}
+
+.hospitalCard{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:100px;
+  width: 33rem;
+}
+
+.contactForm{
+  margin-left: 20px;
+  
+  margin-top:60px;
+  width: 60rem;
+}

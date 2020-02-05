@@ -1,8 +1,10 @@
 import React from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 //import axios from 'axios';
 import jwt_decode from 'jwt-decode'
 //import EditHospital from './EditHospital'
+import { Card, Button, CardHeader, CardFooter, CardBody,
+  CardTitle, CardText } from 'reactstrap';
 
 class Hospital extends React.Component {
   state = {
@@ -16,7 +18,7 @@ class Hospital extends React.Component {
   componentDidMount(){
     var hospital =jwt_decode(localStorage.token).hospital
     console.log(hospital)
-    Axios.get(`http://localhost:7000/hospital/${hospital._id}`)
+    axios.get(`http://localhost:7000/hospital/${hospital._id}`)
     .then(res => {
       //var hospitalID = res.data.hospital;
       //console.log(hospitalID) 
@@ -34,37 +36,46 @@ class Hospital extends React.Component {
   }
 
   deleteHospital=(e)=>{
-    Axios.delete(`http://localhost:7000/hospital/${this.state.id}`) //http://localhost:7000/hospital/:id
+    axios.delete(`http://localhost:7000/hospital/${this.state.id}`) 
     .then(res => {
       //console.log(res)
       console.log(res)
-      //this.props.history.push('./hospital')
+      this.props.history.push('./')
     } 
       )}
 
   editHospital=()=>{
-    this.props.history.push(`./EditHospital/${this.state.id}`)
+    this.props.history.push(`./editHospital/${this.state.id}`)
   }
 
   addMember=()=>{
-    this.props.history.push(`./AddMember/${this.state.id}`)
+    this.props.history.push(`./addMember/${this.state.id}`)
   }
 
 
   render() {
     return (
       <div>
-        <h1>Hospital Information</h1>
-        Hospital Name: {this.state.name}<br></br>
-        location: {this.state.location}<br></br>
-        email: {this.state.email}<br></br>
-        {/* {this.state.id} */}
-        {/* {this.state.hospital} */}
-        
+        <Card style={{ width: '33rem'}} className='hospitalCard'>
+        <CardHeader>Hospital Information</CardHeader>
+        <CardBody>
+          <CardTitle></CardTitle>
+          <CardText>Hospital Name: {this.state.name}</CardText>
 
-        <button onClick={(e) => this.deleteHospital(e)}>Delete Hospital</button>{' '}
-        <button onClick={(e) => this.editHospital(e)}>Edit Hospital</button>{' '}
-        <button onClick={(e) => this.addMember(e)}>Add Member</button>
+          <CardTitle></CardTitle>
+          <CardText>Location: {this.state.location}</CardText>
+
+          <CardTitle></CardTitle>
+          <CardText>Email: {this.state.email}</CardText>
+
+          <i aria-hidden="true" class="edit outline link icon" onClick={(e) => this.editHospital(e)}></i>          
+          <i aria-hidden="true" class="delete link icon" onClick={(e) => this.deleteHospital(e)}></i>          
+          {/* <Button onClick={(e) => this.deleteHospital(e)}>Delete Hospital</Button>{' '} */}
+          {/* <Button onClick={(e) => this.editHospital(e)}>Edit Hospital</Button>{' '} */}
+          
+        </CardBody>
+        <CardFooter><Button onClick={(e) => this.addMember(e)}>Add Member</Button></CardFooter>
+      </Card>
       </div>
     )
   }

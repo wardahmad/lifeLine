@@ -13,7 +13,6 @@ class EditHospital extends Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-
     }
 
     onSubmetHandler = () => {
@@ -28,10 +27,8 @@ class EditHospital extends Component {
         var hospital =jwt_decode(localStorage.token).hospital
         return (
             <div>
-                
                 <h1>EditHospital</h1>
-
-                <Form onSubmit={this.onSubmetHandler}>
+                <Form onSubmit={this.onSubmetHandler} className="form">
                 <Form.Group controlId="formGroupUsername">
                     <Form.Label>Name</Form.Label>
                     <Form.Control name="name" onChange={this.onChangeHandler} type="text" placeholder={hospital.name} />
@@ -43,9 +40,6 @@ class EditHospital extends Component {
 
                 <Button onClick = {this.onSubmetHandler} >Save</Button>
              </Form>
-
-                
-
             </div>
         )
     }
