@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Menu from './components/Navbar';
+import MenuExampleColoredInvertedMenus from './components/test'
 //import Footer from './components/Footer';
 //import ControlledCarousel from './components/Home';
 //import { Router, Route } from 'react-router-dom';
@@ -21,6 +22,7 @@ function App() {
     <div>
       <div>
         < Menu />
+        
         {/* < ControlledCarousel /> */}
         {/* < Info />
         < Hospital /> */}
@@ -45,6 +47,7 @@ function App() {
 
       </Router>
       </div> */}
+      {/* <button className="ui button"></button> */}
       
 
     </div>

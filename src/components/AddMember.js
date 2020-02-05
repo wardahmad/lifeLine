@@ -20,7 +20,8 @@ class AddMember extends React.Component {
     onSubmetHandler = () => {
         var hospital =jwt_decode(localStorage.token).hospital
         axios.post(`http://localhost:7000/${hospital._id}/members`, this.state)
-            .then(res => { console.log(res)})
+            .then(res => { console.log(res)
+                this.props.history.push('/member')})
             .catch(err => { console.log(err) })
     }
 
@@ -38,7 +39,7 @@ class AddMember extends React.Component {
                 </Form.Group>
                 <Form.Group controlId="formGroupEmail">
                     <Form.Label>Date Of Birth</Form.Label>
-                    <Form.Control name="dateOfBirth" onChange={this.onChangeHandler} type="text" placeholder="dateOfBirth" />
+                    <Form.Control name="dateOfBirth" onChange={this.onChangeHandler} type="date" placeholder="dateOfBirth" />
                 </Form.Group>
                 <Form.Group controlId="formGroupPassword">
                     <Form.Label>National ID</Form.Label>

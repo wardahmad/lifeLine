@@ -15,6 +15,7 @@ import AddMember from './AddMember'
 //import Contact from './Contact';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import Members from './Members';
 
 class Menu extends React.Component {
   render() {
@@ -32,9 +33,11 @@ class Menu extends React.Component {
               <Nav.Link><Link to='/'>Home</Link></Nav.Link>
               <Nav.Link><Link to='/hospital'>Hospital</Link></Nav.Link>
               <Link to= '/EditHospital'></Link>
-              <Link to= '/addMember'></Link>
+              {/* <Link to= '/addMember'></Link> */}
+              <Nav.Link><Link to='/member'>Members</Link></Nav.Link>
               <Nav.Link>How to donate?</Nav.Link>
               {/* <Nav.Link>Our Partners</Nav.Link> */}
+
               <Nav.Link>About us</Nav.Link>
               <Nav.Link>Contact us</Nav.Link>
 
@@ -55,10 +58,12 @@ class Menu extends React.Component {
               <Route path="/hospital" component={Hospital} />
               <Route path="/EditHospital" component={EditHospital} />
               <Route path="/addMember" component={AddMember} />
+              <Route path="/member" component={Members} />
               {/* <Route exact path="/How" component={How} />
               <Route path="/Hospital" component={Hospital} />
               <Route path="/About" component={About} />
               <Route path="/Contact" component={Contact} />  */}
+              
 
 
       </Router>

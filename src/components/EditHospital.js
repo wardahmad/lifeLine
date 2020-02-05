@@ -19,7 +19,8 @@ class EditHospital extends Component {
     onSubmetHandler = () => {
         var hospital =jwt_decode(localStorage.token).hospital
         axios.put(`http://localhost:7000/hospital/${hospital._id}`, this.state)
-            .then(res => { console.log(res)})         
+            .then(res => { console.log(res)
+                this.props.history.push('/hospital')})         
             .catch(err => { console.log(err) })
     }
 

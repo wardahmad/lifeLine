@@ -18,7 +18,8 @@ export class SignUp extends React.Component {
 
     onSubmetHandler = () => {
         axios.post("http://localhost:7000/hospital", this.state)
-            .then(res => { console.log(res)})
+            .then(res => { console.log(res)
+                this.props.history.push('/SignIn')})
             
             .catch(err => { console.log(err) })
     }
