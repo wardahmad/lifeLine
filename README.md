@@ -1,7 +1,6 @@
 <img align="center" src="images/logo-aa-2.png">
 
-### Project #4: MERN stack app
-# Life Line
+### Project #4: MERN stack app : Life Line
 
 # Deployed link:
 
@@ -25,16 +24,14 @@ Life Line is a blood donation system that collects all hospitals and blood banks
 
 ​
 ### :small_orange_diamond: Database:
-two models: 
+Two models: 
 * Hospitals: Name, location, Email, password, [ member ] >> ref
 * Members (Donors + Patients): Name, dateOfBirth,nationality, National Id, BloodType,  type.
 ​
 ### :small_orange_diamond: Wireframe:
 ![](/images/wireframe1.jpg) ![](/images/wireframe2.jpg) ![](/images/wireframe3.jpg)
-​
-### :small_orange_diamond: Sitemap:
-![](/images/sitemap.jpg)
-​
+<img align="center" src="images/Wireframe.png">
+
 ### Features:
 * Navigation bar
 * Sign up and create a hospital account.
