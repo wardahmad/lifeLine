@@ -1,5 +1,5 @@
 <img align="center" src="images/logo-aa-2.png">
-<img align="center" src="images/solidarity.png">
+<img width="50" height="50" src="images/solidarity.png">
 
 ### Project #4: MERN stack app : Life Line
 
