@@ -1,11 +1,15 @@
 <img align="center" src="images/logo-aa-2.png">
-<img width="50" height="50" src="images/solidarity.png">
 
 ### Project #4: MERN stack app : Life Line
+<img width="50" height="50" src="images/solidarity.png">
 
-### Deployed link:
+## Deployed link:
 
-## :large_orange_diamond: Life Line
+
+## lifeLine-backEnd Link
+https://github.com/wardahmad/lifeLine-backEnd
+
+## :small_orange_diamond: Life Line
 ​
 Life Line is a blood donation system that collects all hospitals and blood banks in one place.
 ​
