@@ -27,8 +27,7 @@ Life Line is a blood donation system that collects all hospitals and blood banks
  * MongoDB
 
 ​
-### :small_orange_diamond: Database:
-Two models: 
+### Two models: 
 * Hospitals: Name, location, Email, password, [ member ] >> ref
 * Members (Donors + Patients): Name, dateOfBirth,nationality, National Id, BloodType,  type.
 ​
