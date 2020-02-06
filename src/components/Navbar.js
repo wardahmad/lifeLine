@@ -1,12 +1,11 @@
 import React from 'react';
 import { Nav, Navbar, Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './img/logo.png';
+import logo from './img/solidarity.png';
 import './style/navbar.css';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import Home from './Home';
-//import How from './How';
 import Hospital from './Hospital';
 import EditHospital from './EditHospital';
 import AddMember from './AddMember'
@@ -26,37 +25,33 @@ class Menu extends React.Component {
           <Navbar.Brand href="#home">
             <Image src={logo} width="50" height="50" className="d-inline-block align-top" />
           </Navbar.Brand>
-          <Navbar.Brand className="nav">Life Line</Navbar.Brand>
+          <Navbar.Brand className="nav"><p className="navPar">Life Line</p></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="nav mr-auto">
 
-              <Nav.Link><Link to='/'>Home</Link></Nav.Link>
-              <Nav.Link><Link to='/hospital'>Hospital</Link></Nav.Link>
-              <Nav.Link><Link to='/member'>Members</Link></Nav.Link>
-              <Nav.Link><Link to='/about'>About us</Link></Nav.Link>
-              <Nav.Link><Link to='/contact'>Contact us</Link></Nav.Link>
+              <Nav.Link className="navList"><Link to='/'>Home</Link></Nav.Link>
+              <Nav.Link className="navList"><Link to='/hospital'>Hospital</Link></Nav.Link>
+              <Nav.Link className="navList"><Link to='/member'>Members</Link></Nav.Link>
+              {/* <Nav.Link className="navList"><Link to='/about'>About us</Link></Nav.Link> */}
+              <Nav.Link className="navList"><Link to='/contact'>Contact us</Link></Nav.Link>
 
-              {/* <Link to= '/EditHospital'></Link> */}
-              {/* <Link to= '/addMember'></Link> */}
-              {/* <Nav.Link>How to donate?</Nav.Link> */}
-              {/* <Nav.Link>Our Partners</Nav.Link> */}
 
             </Nav>
             <Nav pullRight inline>
-              <Nav.Link><Link to='/signIn'>Sign In</Link></Nav.Link>
-              <Nav.Link><Link to='/signUp'> Sign Up</Link></Nav.Link>
+              <Nav.Link className="navList"><Link to='/signIn'>Sign In</Link></Nav.Link>
+              <Nav.Link className="navList"><Link to='/signUp'> Sign Up</Link></Nav.Link>
             </Nav>
 
           </Navbar.Collapse>
         </Navbar>
 
-        
+
 
         <Route exact path="/" component={Home} />
         <Route path="/hospital" component={Hospital} />
         <Route path="/member" component={Members} />
-        <Route path="/about" component={About} />
+        {/* <Route path="/about" component={About} /> */}
         <Route path="/contact" component={Contact} />
 
         <Route path="/signIn" component={SignIn} />

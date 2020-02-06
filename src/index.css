@@ -27,6 +27,7 @@ margin-top:150px;
   margin-left: auto;
   margin-right: auto;
   margin-top:50px;
+  margin-bottom: 35px;
 }
 
 .hospitalCard{
@@ -42,3 +43,44 @@ margin-top:150px;
   margin-top:60px;
   width: 60rem;
 }
+
+.navPar{
+  color: #e32314;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 27px;
+  margin-right: 7px;
+}
+
+.navList{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 14px;
+}
+
+.carousel{
+  margin: 0 auto; 
+  width: 100%;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 25px;
+  background-color:white;
+  color: black;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.hospitalFont{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #e32314;
+  font-size: 25px;
+}
+
+.hospitalPar, .memberPar{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+

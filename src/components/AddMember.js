@@ -4,8 +4,6 @@ import { Button } from 'react-bootstrap';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode'
 
-
-
 class AddMember extends React.Component {
     state = {}
 
@@ -29,7 +27,7 @@ class AddMember extends React.Component {
         return (
             <div>
                 <Form onSubmit={this.onSubmetHandler} className="form">
-                <h3 style={{textAlign: "center"}}>Add Member</h3>
+                    <h3 style={{ textAlign: "center" }}>Add Member</h3>
                     <Form.Group controlId="formGroupUsername">
                         <Form.Label>Full Name</Form.Label>
                         <Form.Control name="name" onChange={this.onChangeHandler} type="text" placeholder="name" />

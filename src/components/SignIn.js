@@ -16,27 +16,27 @@ class SignIn extends React.Component {
 
     onSubmetHandler = () => {
         axios.post("http://localhost:7000/login", this.state)
-        .then(res =>   {
-            
-            console.log(res.data.login)
-        if (res.data.login){
-            console.log(res.data.token)
-            var pynode = jwt_decode(res.data.token)
-            console.log(pynode)
-            localStorage.setItem('token', res.data.token)
-            this.props.history.push('/hospital')
-            //localStorage.hospital
-        }
-        })
-        .catch(err => console.log(err))
+            .then(res => {
+
+                console.log(res.data.login)
+                if (res.data.login) {
+                    console.log(res.data.token)
+                    var pynode = jwt_decode(res.data.token)
+                    console.log(pynode)
+                    localStorage.setItem('token', res.data.token)
+                    this.props.history.push('/hospital')
+                    //localStorage.hospital
+                }
+            })
+            .catch(err => console.log(err))
     }
 
     render() {
         //console.log(this.state)
-        return (    
-            
+        return (
+
             <Form onSubmit={this} className="formSignIn">
-            <h4 style={{textAlign: "center"}}>SignIn</h4><br></br>                
+                <h4 style={{ textAlign: "center" }}>SignIn</h4><br></br>
                 <Form.Group controlId="formGroupEmail" >
                     <Form.Label>Email address</Form.Label>
                     <Form.Control name="email" onChange={this.onChangeHandler} type="email" placeholder="Enter email" />
@@ -46,7 +46,7 @@ class SignIn extends React.Component {
                     <Form.Control name="password" onChange={this.onChangeHandler} type="password" placeholder="Password" />
                 </Form.Group>
 
-                  <Button onClick={this.onSubmetHandler} >Sign In</Button>
+                <Button onClick={this.onSubmetHandler} >Sign In</Button>
             </Form>
 
         );

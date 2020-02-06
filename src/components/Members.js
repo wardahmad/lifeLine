@@ -5,11 +5,6 @@ import jwt_decode from 'jwt-decode';
 
 export default class Members extends Component {
     state = {
-        name: "",
-        nationality: "",
-        nationalID: "",
-        BloodType: "",
-        type: "",
         arr: []
     }
 
@@ -19,19 +14,8 @@ export default class Members extends Component {
 
         axios.get(`http://localhost:7000/members/${hospital._id}`)
             .then(res => {
-                //var hospitalID = res.data.hospital;
-                //console.log(res) 
-                //console.log(res.data.member.member[0].name)
                 this.setState({
-                    // name: res.data.member.member[1].name,
-                    // nationality: res.data.member.member[1].nationality,
-                    // nationalID: res.data.member.member[1].nationalID,
-                    // BloodType: res.data.member.member[1].bloodType,
-
-                    // type: res.data.member.member[0].type
                     arr: res.data.member.member
-                    //     id : hospital._id
-                    //     //hospital : jwt_decode(localStorage.token).hospital
                 })
 
 
@@ -40,24 +24,30 @@ export default class Members extends Component {
             .catch(console.log)
     }
 
+    // deleteMember = (e) => {
+    //     axios.delete(`http://localhost:7000/members/:id`)
+    //       .then(res => {
+    //         //console.log(res)
+    //         console.log(res)
+    //         this.props.history.push('./')
+    //       }
+    //       )
+    //   }
+
     render() {
         return (
             <div>
                 {this.state.arr.map((element, key) =>
 
-                    //    <span> Name: {element.name}
-                    //     nationality: {element.nationality}
-                    //     nationalID: {element.nationalID}<br></br>
-                    //     type: {element.type}</span>
-
                     <span>
-                    <Card body className="text-center">
-                        <CardTitle>Full Name: {element.name}</CardTitle>
-                        <CardText>Nationality: {element.nationality}</CardText>
-                        <CardText>NationalID: {element.nationalID}</CardText>
-                        <CardText>type: {element.type}</CardText>
-                        <Button>Go somewhere</Button>
-                    </Card>
+                        <Card body className="text-left" style={{ width: '30rem',alignContent: 'center', marginTop: "25px", marginLeft: "Auto", marginRight: "Auto" }}>
+                            <CardTitle className="memberPar">Full Name: {element.name}</CardTitle>
+                            <CardText className="memberPar">Nationality: {element.nationality}</CardText>
+                            <CardText className="memberPar">NationalID: {element.nationalID}</CardText>
+                            <CardText className="memberPar">Type: {element.type}</CardText>
+                            <Button style={{ width: '5rem',alignContent: 'center' }} color="danger"><i aria-hidden="true" class="delete link icon" onClick={(e) => this.deleteMember(e)}></i></Button>
+                            
+                        </Card>
 
                     </span>
 
