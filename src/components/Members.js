@@ -19,20 +19,21 @@ export default class Members extends Component {
                 })
 
 
-                console.log(this.state.arr)
+                //console.log(this.state.arr)
             })
             .catch(console.log)
     }
 
-    // deleteMember = (e) => {
-    //     axios.delete(`http://localhost:7000/members/:id`)
-    //       .then(res => {
-    //         //console.log(res)
-    //         console.log(res)
-    //         this.props.history.push('./')
-    //       }
-    //       )
-    //   }
+    deleteMember = (e) => {
+        console.log(e)
+        axios.delete(`http://localhost:7000/members/${e}`)
+          .then(res => {
+            //console.log(res)
+            //console.log(res)
+            this.props.history.push('./hospital')
+          }
+          )
+      }
 
     render() {
         return (
@@ -45,7 +46,7 @@ export default class Members extends Component {
                             <CardText className="memberPar">Nationality: {element.nationality}</CardText>
                             <CardText className="memberPar">NationalID: {element.nationalID}</CardText>
                             <CardText className="memberPar">Type: {element.type}</CardText>
-                            <Button style={{ width: '5rem',alignContent: 'center' }} color="danger"><i aria-hidden="true" class="delete link icon" onClick={(e) => this.deleteMember(e)}></i></Button>
+                            <Button style={{ width: '5rem',alignContent: 'center' }} color="danger" onClick={() => this.deleteMember(element._id)}>Delete</Button>
                             
                         </Card>
 
